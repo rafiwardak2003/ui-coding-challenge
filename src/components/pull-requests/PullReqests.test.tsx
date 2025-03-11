@@ -1,10 +1,13 @@
 import { screen, within, fireEvent } from "@testing-library/react"
 import { renderWithProviders } from "../../utils/test-utils.tsx"
 import PullRequests from "./PullRequests"
+import { axe } from "vitest-axe"
 
 describe("Pull Requests", () => {
+  let renderedComponent: HTMLElement
   beforeEach(() => {
-    renderWithProviders(<PullRequests />)
+    const { container } = renderWithProviders(<PullRequests />)
+    renderedComponent = container
   })
 
   it("should show spinner initially", async () => {
@@ -55,5 +58,9 @@ describe("Pull Requests", () => {
 
     const selectedTokens = screen.getAllByTestId("selected-label")
     expect(selectedTokens.length).toBe(1)
+  })
+
+  it.skip("should have no accessibility violations", async () => {
+    expect(await axe(renderedComponent)).toHaveNoViolations()
   })
 })
