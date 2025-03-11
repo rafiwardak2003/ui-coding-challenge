@@ -4,6 +4,10 @@ Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Test
 
 This project uses MUI, Redux Toolkit, Vite, React (TypeScript), and other goodies.
 
+## To clone the repo
+
+`git clone https://github.com/rafiwardak2003/ui-coding-challenge.git`
+
 ## How to run locally
 
 In your terminal, run the following commands:
@@ -24,7 +28,9 @@ This will build the project as you would for production and preview locally:
 - `yarn build`
 - `yarn preview`
 
-Note: To deploy this (Azure, AWS), please use a static service like AWS S3/Cloudfront or Azure Static Web App.
-They are cheap and they just serve static files. Deploy on thly the `dist` folder.
+Note: To deploy this on the cloud (Azure, AWS), please use a static service like AWS S3/Cloudfront or Azure Static Web App.
+They are cheaper and they just serve static files. Deploy only the `dist` folder. We do not need to use any
+complicated deployments like Docker for modern Single Page Apps like React, because they are static files and 
+a static file service generally works the best because they are highly available by default and cache the files.
 
 ![screenshot](screenshot.png)
